@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+  <mapper namespace="rm">
+
+	<!-- 댓글 등록 -->
+	<insert id="enrollReply">
+		INSERT INTO REPLY(GDSCODE, MID, CONTENT, RATING)
+		VALUES(#{gdscode}, #{mid}, #{content}, #{rating})
+	</insert>
+	
+	<select id="replylist" parameterType="int" resultType="replydto">
+		SELECT * FROM REPLY WHERE GDSCODE=#{gdscode} ORDER BY REPLYID DESC
+	</select>
+	<!-- 댓글 체크 -->
+	<select id="checkReply" resultType="integer">
+	    SELECT REPLYID FROM REPLY
+	    WHERE MID = #{mid} AND GDSCODE = #{gdscode}
+	</select>
+	
+	<!-- 댓글 수정 -->
+  	<update id="updateReply">
+  	    UPDATE REPLY SET CONTENT =#{content}, RATING= #{rating}
+  	    WHERE replyId =#{replyId}
+  	</update>
+  	
+  	<!-- 댓글 수정 팝업창 -->
+  	<select id="getUpdateReply" resultType="replydto">
+	    SELECT * FROM REPLY
+	    WHERE replyId = #{replyId}
+	</select>
+	
+	<select id="getRatingAverage" resultType="double">
+  		SELECT AVG(RATING) 
+  		FROM REPLY 
+  		WHERE GDSCODE = #{gdscode}
+  	</select>
+
+	<update id="updateRating">
+		UPDATE PRODUCT 
+		SET RATINGAVG = #{ratingAvg}
+		WHERE GDSCODE = #{gdscode}
+	</update>
+	
+	<!-- 댓글 삭제 -->
+  	<delete id="deleteReply">
+  	
+  		DELETE FROM REPLY
+  		WHERE replyId = #{replyId}
+  		
+  	</delete>
+  	
+  	
+  	
+  	
+  	
+  	<!-- 댓글 페이징 -->
+  	<select id="getReplyList" parameterType="pagedto" resultType="replydto">
+  		
+  		
+  		SELECT * FROM (SELECT B.*, ROW_NUMBER() OVER(ORDER BY replyId DESC)
+			AS RN FROM REPLY B) WHERE RN BETWEEN #{startRow} AND #{endRow}
+  		
+  	</select>
+  	
+  	
+  	<select id="listcount" resultType="int">
+		SELECT COUNT(GDSCODE) FROM REPLY
+	</select>
+  	
+ 
+  </mapper>

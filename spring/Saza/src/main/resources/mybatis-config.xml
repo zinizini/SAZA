@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.hhj.SazaShopping.dto.MemberDTO" alias="memberdto"/>
+		<typeAlias type="com.hhj.SazaShopping.dto.ProductDTO" alias="productdto"/>
+		<typeAlias type="com.hhj.SazaShopping.dto.CategoryDTO" alias="categorydto"/>
+		<typeAlias type="com.hhj.SazaShopping.dto.CartDTO" alias="cartdto"/>
+		<typeAlias type="com.hhj.SazaShopping.dto.OrderPageDTO" alias="orderpagedto"/>
+		<typeAlias type="com.hhj.SazaShopping.dto.OrderPageItemDTO" alias="orderpageitemdto"/>
+		<typeAlias type="com.hhj.SazaShopping.dto.ReplyDTO" alias="replydto"/>
+		<typeAlias type="com.hhj.SazaShopping.dto.PageDTO" alias="pagedto"/>
+		<typeAlias type="com.hhj.SazaShopping.dto.OrderDTO" alias="orderdto"/>
+		<typeAlias type="com.hhj.SazaShopping.dto.OrderItemDTO" alias="orderitemdto"/>
+		<typeAlias type="com.hhj.SazaShopping.dto.OrderCancelDTO"/>
+		<typeAlias type="com.hhj.SazaShopping.dto.UpdateReplyDTO"/>
+		<typeAlias type="com.hhj.SazaShopping.dto.ReplyPageDTO"/>
+		
+	</typeAliases>
+</configuration>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="am">
+
+	<insert id="presister" parameterType="productdto">
+		INSERT INTO PRODUCT(GDSNAME,CATECODE,GDSIMG,GDSPRICE,GDSDETAL,GDSSTOCK) 
+		VALUES(#{gdsname},#{cateCode},#{gdsimg},#{gdsprice},#{gdsdetal},#{gdsStock})
+	</insert>
+	
+	<select id="catelist" resultType="categorydto">
+		SELECT * FROM GOODS_CATEGORY ORDER BY CATECODE
+	</select>
+	
+	<delete id="productdelete" parameterType="int">
+		DELETE FROM PRODUCT WHERE GDSCODE=#{gdscode}
+	</delete>
+	
+	<update id="productupdate" parameterType="productdto">
+		UPDATE PRODUCT SET CATECODE=#{cateCode},GDSNAME=#{gdsname}, GDSPRICE=#{gdsprice}, GDSDETAL=#{gdsdetal}, GDSSTOCK=#{gdsStock}
+		WHERE GDSCODE=#{gdscode}
+	</update>
+	
+	<select id="updateview" parameterType="int" resultType="productdto">
+		SELECT * FROM PRODUCT WHERE GDSCODE=#{gdscode}
+	</select>
+	
+	<!-- 주문 리스트 -->
+	<!-- <select id="getOrderList" resultType="orderdto">
+		SELECT * FROM MEMBER_ORDER ORDER BY ORDERID
+	</select>	 -->
+	
+	<!-- 상품 총 개수 -->
+	<!-- <select id="getOrderTotal" resultType="int">
+	
+		select count(*) from member_order
+		
+	    <if test="keyword != null">
+	    	where mid like '%'||#{keyword}||'%'
+	    </if>
+	
+	</select> -->
+	
+	<select id="membersearch" parameterType="java.util.HashMap" resultType="orderdto">
+		SELECT * FROM MEMBER_ORDER
+			<include refid="msearch"></include>
+	</select>
+	
+	<sql id="msearch">
+		<choose>
+			<when test="type=='mid'">
+				WHERE MID LIKE '%'||#{word}||'%'
+			</when>
+		</choose>
+	</sql>
+	
+	<select id="listcount" resultType="int">
+		SELECT COUNT(ORDERID) FROM MEMBER_ORDER
+	</select>
+	
+	<select id="getOrderList" parameterType="pagedto" resultType="orderdto">
+		SELECT * FROM (SELECT B.*, ROW_NUMBER() OVER(ORDER BY ORDERID DESC)
+		AS RN FROM MEMBER_ORDER B) WHERE RN BETWEEN #{startRow} AND #{endRow}
+	</select>
+	
+	
+	
+	
+</mapper>

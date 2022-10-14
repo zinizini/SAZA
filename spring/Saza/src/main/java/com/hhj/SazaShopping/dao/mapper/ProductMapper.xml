@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="pm">
+<select id="productlist" resultType="productdto">
+		SELECT * FROM PRODUCT
+	</select>
+	
+	<select id="productview" parameterType="int" resultType="productdto">
+		SELECT * FROM PRODUCT WHERE GDSCODE=#{gdscode}
+	</select>
+	
+	<select id="listcount" resultType="int">
+		SELECT COUNT(GDSCODE) FROM PRODUCT
+	</select>
+	
+	<select id="category" resultType="categorydto">
+		select level, cateName, cateCode, cateCodeRef from goods_category
+    start with cateCodeRef is null connect by prior cateCode = cateCodeRef;
+	</select>
+	
+	<select id="productsearch" parameterType="java.util.HashMap" resultType="productdto">
+		SELECT * FROM PRODUCT
+			<include refid="search"></include>
+	</select>
+	
+	<sql id="search">
+		<choose>
+			<when test="type=='gdsname'">
+				WHERE GDSNAME LIKE '%'||#{word}||'%'
+			</when>
+			<when test="type=='cateCode'">
+				WHERE CATECODE LIKE '%'||#{word}||'%'
+			</when>
+		</choose>
+	</sql>
+	
+	
+	<select id="getProductName" resultType="productdto">
+		SELECT GDSCODE, GDSNAME FROM PRODUCT
+		WHERE GDSCODE=#{gdscode} 
+	</select>
+	
+	<select id="productpaging" parameterType="pagedto" resultType="productdto">
+		SELECT * FROM (SELECT B.*, ROW_NUMBER() OVER(ORDER BY GDSCODE DESC)
+			AS RN FROM PRODUCT B) WHERE RN BETWEEN #{startRow} AND #{endRow}
+	</select>
+	
+	<select id="productOrder" resultType="orderdto">
+		SELECT * FROM MEMBER_ORDER 
+	</select>
+	
+	
+	<select id="productOrderList" resultType="orderitemdto">
+		SELECT * FROM MEMBER_ORDERITEM 
+	</select>
+	
+	
+</mapper>

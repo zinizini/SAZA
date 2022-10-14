@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="cartm"> 
+	
+	<!-- 카트 추가  -->
+	<insert id="addcart" parameterType="cartdto">
+		INSERT INTO CART(MID,GDSCODE,CARTQTY) 
+	    VALUES(#{mid,jdbcType=VARCHAR},#{gdscode},#{cartqty})
+	</insert>
+	
+	<!-- 카트 삭제 -->
+	<delete id="deletecart" parameterType="int">
+		DELETE FROM CART WHERE CARTID=#{cartid}
+	</delete>
+	
+	<!-- 카트 수량 수정 -->
+	<update id="modifycount" parameterType="cartdto">
+		UPDATE CART SET CARTQTY=#{cartqty} WHERE CARTID=#{cartid}
+	</update>
+	
+	<!-- 카트 목록 -->
+	<select id="cartlist" parameterType="String" resultType="cartdto">
+	SELECT A.CARTID, A.MID, A.GDSCODE, A.CARTQTY, B.GDSNAME, B.GDSPRICE, B.GDSIMG
+	FROM CART A LEFT OUTER JOIN PRODUCT B ON A.GDSCODE = B.GDSCODE
+	WHERE MID = #{mid,jdbcType=VARCHAR}
+	</select> 
+	
+	
+	<!-- 카트 확인 -->
+	<select id="checkcart" resultType="cartdto">
+		SELECT * FROM CART WHERE MID = #{mid} AND GDSCODE = #{gdscode}
+	</select> 
+	
+	<select id="cartview" parameterType="String" resultType="cartdto">
+		SELECT * FROM CART WHERE MID=#{mid}
+	</select>
+	
+ </mapper>
+ 
+ 

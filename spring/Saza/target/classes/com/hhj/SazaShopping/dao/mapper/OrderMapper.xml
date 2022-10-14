@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="om">
+
+	<!-- 주문 상품 정보 -->
+	<select id="getgoodsinfo" resultType="orderpageitemdto">
+
+		SELECT GDSCODE, GDSNAME, GDSPRICE, GDSIMG
+		FROM PRODUCT WHERE GDSCODE = #{gdscode}
+
+	</select>
+	
+	
+	<!-- GDSNAME 추가  -->
+	<select id="getOrderInfo" resultType="orderitemdto">
+	
+		SELECT GDSCODE, GDSPRICE, GDSNAME, GDSIMG
+		FROM PRODUCT WHERE GDSCODE = #{gdscode}
+	
+	</select>
+	
+	<!-- 주문 테이블 등록 -->
+	<insert id="enrollOrder">
+	
+		INSERT INTO MEMBER_ORDER(ORDERID, ADDRESSEE, MID, MEMBERADDR1, MEMBERADDR2, MEMBERADDR3, ORDERSTATE, DELIVERYCOST)
+    	VALUES(#{orderId},#{addressee}, #{mid}, #{memberaddr1}, #{memberaddr2}, #{memberaddr3}, '배송준비', #{deliveryCost})
+	
+	</insert>
+	
+	<!-- 주문 아이템 테이블 등록 --> <!--  수정수정 네임부터  -->
+	<insert id="enrollOrderItem">
+	
+		INSERT INTO MEMBER_ORDERITEM(ORDERID, GDSCODE, CARTQTY, GDSPRICE, GDSNAME, GDSIMG )
+		VALUES(#{orderId}, #{gdscode}, #{cartqty}, #{gdsprice}, #{gdsname}, #{gdsimg})
+	
+	</insert>
+	
+	<!-- 주문 재고 차감 -->
+	<update id="deductStock">
+	
+		UPDATE PRODUCT SET GDSSTOCK = #{gdsStock} WHERE GDSCODE = #{gdscode}
+	
+	</update>
+	
+	<delete id="deleteOrderCart">
+	
+		DELETE FROM CART WHERE MID = #{mid} AND GDSCODE = #{gdscode}
+	
+	</delete>
+	
+	<!-- 주문취소 -->
+	<update id="orderCancle">
+		UPDATE MEMBER_ORDER SET ORDERSTATE = '주문취소' WHERE ORDERID =#{orderId}
+	</update>	
+
+	<!-- 주문 상품 정보(주문취소) -->
+	<select id="getOrderItemInfo" resultType="orderitemdto">
+		SELECT * FROM MEMBER_ORDERITEM WHERE ORDERID = #{orderId}	
+	</select>
+	
+	<!-- 주문 정보(주문 취소) -->
+	<select id="getOrder" resultType="orderdto">
+		SELECT * FROM MEMBER_ORDER WHERE ORDERID = #{orderId}	
+	</select>
+	
+	<!-- 배송 상태 -->
+<update id="delivery" parameterType="orderdto">
+UPDATE MEMBER_ORDER SET ORDERSTATE = '배송완료', TRACKINGNUM=#{trackingNum} WHERE ORDERID =#{orderId}
+ 
+</update>
+	
+	
+	
+	
+	
+	
+	
+</mapper>

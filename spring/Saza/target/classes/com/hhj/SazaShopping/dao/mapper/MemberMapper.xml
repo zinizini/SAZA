@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mm">
+	<select id="memberlogin" parameterType="memberdto" resultType="String">
+		SELECT MID FROM MEMBER WHERE MID=#{mid} AND MPASSWORD=#{mpassword}
+	</select>
+	
+	<insert id="memberjoin" parameterType="memberdto">
+		INSERT INTO MEMBER(MID, MPASSWORD, MEMAIL, adminck) 
+		VALUES(#{mid}, #{mpassword}, #{memail},0)
+	</insert>
+	
+	<select id="idcheck" parameterType="String" resultType="String">
+		SELECT MID FROM MEMBER WHERE MID=#{mid}
+	</select>
+	
+	<select id="memberupdate" parameterType="String" resultType="memberdto">
+	    SELECT * FROM MEMBER WHERE MID=#{loginId}
+	</select>
+	
+	<!-- 회원정보 수정 -->
+	<update id="profileupdate" parameterType="memberdto">
+	    UPDATE MEMBER SET MEMAIL=#{memail},MNAME=#{mname},MPHONE=#{mphone},
+	    MEMBERADDR1=#{memberaddr1},MEMBERADDR2=#{memberaddr2},MEMBERADDR3=#{memberaddr3}, MFILENAME=#{mfilename}
+	    WHERE MID=#{mid}
+	</update>
+	<select id="emailcheck" parameterType="String" resultType="String">
+		SELECT MID FROM MEMBER WHERE MEMAIL=#{memail}
+	</select>
+	
+	<select id="memberlist" resultType="memberdto">
+		SELECT * FROM MEMBER
+		ORDER BY MID ASC
+	</select>
+	
+	<select id="memberview" parameterType="String" resultType="memberdto">
+		SELECT * FROM MEMBER WHERE MID=#{mid}
+	</select>
+	
+	<select id="withdrawal" parameterType="memberdto" resultType="String">
+		SELECT MID FROM MEMBER WHERE MID=#{mid} AND MPASSWORD=#{mpassword}
+	</select>
+	
+	<delete id="withdraw" parameterType="String">
+		DELETE FROM MEMBER WHERE MID=#{mid}
+	</delete>
+	
+	<select id="idfind" parameterType="memberdto" resultType="String">
+		SELECT MPHONE FROM MEMBER WHERE MID=#{mid} 
+	</select>
+	
+	<select id="idfindajax" parameterType="String" resultType="String">
+		SELECT MID FROM MEMBER WHERE MPHONE=#{mphone}
+	</select>
+	
+	<select id="withdrawalpage" parameterType="String" resultType="memberdto">
+		SELECT * FROM MEMBER WHERE MID=#{loginId}
+	</select>
+	
+	
+	<!-- 주문자 정보 -->
+  	<select id="getMemberInfo" resultType="memberdto">
+  	
+  		SELECT MID, MNAME, MEMAIL, MEMBERADDR1, MEMBERADDR2, MEMBERADDR3
+  		FROM MEMBER WHERE MID = #{mid}
+  	
+  	</select>
+
+
+
+
+	<!-- 아이디 찾기 -->
+	<select id="findId" parameterType="String" resultType="String">
+		SELECT MID FROM MEMBER WHERE MEMAIL = #{memail}
+	</select>
+
+	<!-- 비밀번호 변경 -->
+	<update id="pwUpdate" parameterType="memberdto">
+
+		UPDATE MEMBER SET MPASSWORD = #{mpassword} WHERE MID = #{mid}
+
+	</update>
+	
+	
+	<select id="pUpdate" parameterType="String" resultType="memberdto">
+	    SELECT * FROM MEMBER WHERE MID=#{loginId}
+	</select>
+
+	
+	<!-- <select id="purchaseList" resultType="orderdto">
+	
+	SELECT A.ORDERID, A.ORDERDATE, A.ORDERSTATE, A.TRACKINGNUM, B.CARTQTY, B.GDSCODE
+	FROM MEMBER_ORDER A LEFT OUTER JOIN MEMBER_ORDERITEM B ON A.ORDERID = B.ORDERID
+	WHERE MID = #{loginId,jdbcType=VARCHAR}
+</select> -->
+
+
+<!-- <select id="purchaselist" resultType="orderdto">
+		SELECT * FROM MEMBER_ORDER WHERE MID = #{loginId,jdbcType=VARCHAR}
+	</select> -->
+	
+	<select id="orderview" parameterType="String" resultType="orderdto">
+		SELECT * FROM MEMBER_ORDER WHERE MID=#{mid}
+	</select>
+	
+	<select id="orderList" resultType="orderdto">
+		SELECT * FROM MEMBER_ORDER ORDER BY MID ASC
+	</select>
+	
+	<select id="orderitemList"  resultType="orderitemdto">
+		SELECT * FROM MEMBER_ORDERITEM WHERE ORDERID = #{orderId,jdbcType=VARCHAR}
+	</select>
+	
+	
+	<select id="orderlistView" parameterType="String"  resultType="orderitemdto">
+		SELECT * FROM MEMBER_ORDERITEM WHERE ORDERID = #{orderId}
+	</select>
+	
+	
+	
+	
+	
+	
+	
+	<select id="orderreply" resultType="replydto">
+		
+		SELECT * FROM REPLY 
+	</select>
+
+</mapper>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
