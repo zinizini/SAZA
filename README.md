@@ -20,6 +20,8 @@
 사용자 모드 - 주문하기
 <img width="892" alt="스크린샷 2022-10-19 오전 3 52 13" src="https://user-images.githubusercontent.com/82364296/196518768-5a8cde01-2da6-4d88-bbf5-8522da0c801c.png">
 
+관리자 모드 - 주문관리
+<img width="892" alt="스크린샷 2022-10-19 오전 4 40 35" src="https://user-images.githubusercontent.com/82364296/196528163-569fc433-b91e-4e20-b93f-1d1dfc9090db.png">
 
 
 
