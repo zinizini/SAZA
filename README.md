@@ -1,7 +1,7 @@
 # SAZA
 
 (PC)메인 페이지, 상품 목록(페이징), 카테고리
-<img width="892" alt="스크린샷 2022-10-19 오전 1 10 25" src="https://user-images.githubusercontent.com/82364296/196485670-a50fa21e-2a3b-4caa-ab7a-ece6baf7b4bd.png">
+<img width="892" alt="스크린샷 2022-10-19 오전 2 44 28" src="https://user-images.githubusercontent.com/82364296/196505700-0c3d3011-f659-496f-b865-f4d9161945a1.png">
 <img width="892" alt="스크린샷 2022-10-19 오전 2 41 42" src="https://user-images.githubusercontent.com/82364296/196505155-693fbb4f-8f8a-47b1-a2d1-c9697f60585d.png">
 
 사용자 모드 - 회원가입, 아이디/비밀번호 찾기, 프로필 수정, 회원 탈퇴
