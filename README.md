@@ -2,8 +2,7 @@
 
 (PC)메인 페이지, 상품 목록(페이징), 카테고리
 <img width="892" alt="스크린샷 2022-10-19 오전 1 10 25" src="https://user-images.githubusercontent.com/82364296/196485670-a50fa21e-2a3b-4caa-ab7a-ece6baf7b4bd.png">
-<img width="892" alt="스크린샷 2022-10-19 오전 1 54 22" src="https://user-images.githubusercontent.com/82364296/196495833-b92c8485-d8bc-4323-9a55-d751f6be6bce.png">
-
+<img width="892" alt="스크린샷 2022-10-19 오전 2 41 42" src="https://user-images.githubusercontent.com/82364296/196505155-693fbb4f-8f8a-47b1-a2d1-c9697f60585d.png">
 
 사용자 모드 - 회원가입, 아이디/비밀번호 찾기, 프로필 수정, 회원 탈퇴
 <img width="892" alt="스크린샷 2022-10-19 오전 2 34 45" src="https://user-images.githubusercontent.com/82364296/196503822-f002584a-f557-48ff-94c6-5db54f150577.png">
