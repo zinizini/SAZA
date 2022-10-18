@@ -24,7 +24,8 @@
 <img width="892" alt="스크린샷 2022-10-19 오전 4 40 35" src="https://user-images.githubusercontent.com/82364296/196528163-569fc433-b91e-4e20-b93f-1d1dfc9090db.png">
 
 사용자 모드 - 리뷰작성
-<img width="892" alt="스크린샷 2022-10-19 오전 6 04 07" src="https://user-images.githubusercontent.com/82364296/196544660-42c88ba1-2087-4846-b650-375f35c236f9.png">
+<img width="892" alt="스크린샷 2022-10-19 오전 6 07 13" src="https://user-images.githubusercontent.com/82364296/196545058-3dc0661f-a2d8-40b1-bd5e-4e4cac6e1a7f.png">
+
 
 
 
