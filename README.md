@@ -6,7 +6,7 @@
 
 
 사용자 모드 - 회원가입, 아이디/비밀번호 찾기, 프로필 수정, 회원 탈퇴
-<img width="892" alt="스크린샷 2022-10-19 오전 2 10 30" src="https://user-images.githubusercontent.com/82364296/196499151-025e23ca-d7e1-43ee-bd21-acb0d4422501.png">
+<img width="892" alt="스크린샷 2022-10-19 오전 2 13 18" src="https://user-images.githubusercontent.com/82364296/196499644-92137752-93e1-4eb7-82d2-951c521440d4.png">
 <img width="893" alt="스크린샷 2022-10-17 오후 12 58 59" src="https://user-images.githubusercontent.com/82364296/196095807-35012a64-29b3-44dc-9d4c-e47b6f955daf.png">
 <img width="893" alt="스크린샷 2022-10-17 오후 2 35 30" src="https://user-images.githubusercontent.com/82364296/196097091-9114d944-1b24-487c-be69-a949ca402a0c.png">
 
