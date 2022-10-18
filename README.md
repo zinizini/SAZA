@@ -18,7 +18,8 @@
 
 
 사용자 모드 - 주문하기
-<img width="892" alt="스크린샷 2022-10-19 오전 3 50 08" src="https://user-images.githubusercontent.com/82364296/196518385-907d3e03-d266-4f31-9404-5af2f2c39d20.png">
+<img width="892" alt="스크린샷 2022-10-19 오전 3 52 13" src="https://user-images.githubusercontent.com/82364296/196518768-5a8cde01-2da6-4d88-bbf5-8522da0c801c.png">
+
 
 
 
