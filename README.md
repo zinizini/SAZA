@@ -12,6 +12,8 @@
 사용자 모드 - 장바구니(Cart)
 <img width="892" alt="스크린샷 2022-10-18 오전 1 53 58" src="https://user-images.githubusercontent.com/82364296/196237474-5c9f6e0d-952e-4544-a25e-4b75a3d89f08.png">
 
+사용자 모드 - 주문하기
+<img width="892" alt="스크린샷 2022-10-18 오후 5 48 59" src="https://user-images.githubusercontent.com/82364296/196383319-16054927-a7aa-4138-8f34-955f0473e989.png">
 
 
 
