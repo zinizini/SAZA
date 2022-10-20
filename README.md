@@ -19,7 +19,7 @@
 <img width="892" alt="스크린샷 2022-10-19 오전 4 40 35" src="https://user-images.githubusercontent.com/82364296/196528163-569fc433-b91e-4e20-b93f-1d1dfc9090db.png">
 ### 사용자 모드 - 리뷰작성
 <img width="892" alt="스크린샷 2022-10-19 오전 6 07 13" src="https://user-images.githubusercontent.com/82364296/196545058-3dc0661f-a2d8-40b1-bd5e-4e4cac6e1a7f.png">
-### 관리자 모드 - 상품 등록
+#### 관리자 모드 - 상품 등록
 <img width="892" alt="스크린샷 2022-10-20 오전 11 53 34" src="https://user-images.githubusercontent.com/82364296/196845319-b3557eaa-bae0-4f49-b7b1-2a69ca82f9ce.png">
 
 
