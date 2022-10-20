@@ -1,5 +1,8 @@
 # SAZA
 
+## DB설계 
+<img width="892" alt="스크린샷 2022-10-20 오후 2 07 29" src="https://user-images.githubusercontent.com/82364296/196861473-59e80841-bbef-412a-ba8a-5931f14738f4.png">
+
 (PC)메인 페이지, 상품 목록(페이징), 카테고리
 <img width="892" alt="스크린샷 2022-10-19 오전 2 44 28" src="https://user-images.githubusercontent.com/82364296/196505700-0c3d3011-f659-496f-b865-f4d9161945a1.png">
 <img width="892" alt="스크린샷 2022-10-19 오전 2 48 17" src="https://user-images.githubusercontent.com/82364296/196506502-d5ec589f-ffb0-469a-959f-40ff3deda7fe.png">
@@ -30,6 +33,7 @@
 관리자 
 관리자 모드 - 상품 등록
 <img width="892" alt="스크린샷 2022-10-20 오전 11 53 34" src="https://user-images.githubusercontent.com/82364296/196845319-b3557eaa-bae0-4f49-b7b1-2a69ca82f9ce.png">
+
 
 
 
