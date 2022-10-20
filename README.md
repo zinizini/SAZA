@@ -1,6 +1,6 @@
 # 𓄂𓂻ㅏ𓊄ㅏˢ ᴬ ᶻ ᴬ
 
-> 개발도구  
+> ## 개발도구  
 * DB설계 - <img src="https://img.shields.io/badge/oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white">  
 * IDE 도구 - <img src="https://img.shields.io/badge/Eclipse IDE-2C2255?style=for-the-badge&logo=Eclipse IDE&logoColor=white">  
 * 웹 서버 - <img src="https://img.shields.io/badge/apache tomcat-F8DC75?style=for-the-badge&logo=apachetomcat&logoColor=white">  
