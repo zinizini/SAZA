@@ -1,6 +1,6 @@
 # 𓄂𓂻ㅏ𓊄ㅏˢ ᴬ ᶻ ᴬ
 
-<img src="https://img.shields.io/badge/Java-FF9999?style=flat-square&logo=Java&logoColor=white"/>
+<img src="https://img.shields.io/badge/Java-FF9999?style=flat-square&logo=Java&logoColor=black"/>
 
 > ## DB설계 
 <img width="892" alt="스크린샷 2022-10-20 오후 2 07 29" src="https://user-images.githubusercontent.com/82364296/196861473-59e80841-bbef-412a-ba8a-5931f14738f4.png">
