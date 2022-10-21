@@ -1,20 +1,14 @@
 ![Untitled(1)](https://user-images.githubusercontent.com/82364296/196901912-608e1431-f4d0-4e40-aae7-80261e770a29.png)
 > ## 제작의도  
-코로나19 팬데믹 영향으로 활동 제약이 생기면서 가정 내 생활 증가로 생활필수품, 집 꾸미기 용품, 생활가전 등 '온라인 쇼핑' 이용이 증가했다. 그래서 구매를 자유롭게 이용할 수 있는 사이트를 구현해보고자 한다. 
-영향으로 '온라인 쇼핑' 이용이 증가했다. 개인간거래 플랫폼 관심도(정보량)가 높아지는 요즘 평소 이용하던 플랫폼들을 참고해 프로젝트를 진행하려고 합니다. 코로나19 팬데믹 이전보다 '온라인 쇼핑' 이용이 증가했다고 밝
-가정 내 생활 증가로 생활필수품, 집 꾸미기 용품, 생활가전 등 거래가 늘어나면서
+코로나19 팬데믹 영향으로 활동 제약이 생기면서 가정 내 생활 증가로 생활필수품, 집 꾸미기 용품, 생활가전 등 '온라인 쇼핑' 이용이 증가했다. 그래서 온라인에서 자유롭게 취향저격하는 가구구매를 할 수 있는 사이트를 구현해보고자 한다. 
  
-
 > ## 개발도구  
 * DB설계 - <img src="https://img.shields.io/badge/oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white">  
 * IDE 도구 - <img src="https://img.shields.io/badge/Eclipse IDE-2C2255?style=for-the-badge&logo=Eclipse IDE&logoColor=white">  
 * 웹 서버 - <img src="https://img.shields.io/badge/apache tomcat-F8DC75?style=for-the-badge&logo=apachetomcat&logoColor=white">  
-* 언어 - <img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white"> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white"> <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"> <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=Bootstrap3&logoColor=white"> 
+* 언어 - <img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white"> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white"> <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">  
 * 주요 라이브러리 - <img src="https://img.shields.io/badge/jquery-0769AD?style=for-the-badge&logo=jquery&logoColor=white">  <img src="https://img.shields.io/badge/JSON-000000?style=for-the-badge&logo=JSON&logoColor=white">  
 * 프레임워크 - <img src="https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=Spring&logoColor=white">
-*
-
-
 
 > ## DB설계 
 <img width="892" alt="스크린샷 2022-10-20 오후 2 07 29" src="https://user-images.githubusercontent.com/82364296/196861473-59e80841-bbef-412a-ba8a-5931f14738f4.png">
@@ -42,10 +36,3 @@
 
 > ### 관리자 모드 - 상품 등록
 <img width="892" alt="스크린샷 2022-10-20 오전 11 53 34" src="https://user-images.githubusercontent.com/82364296/196845319-b3557eaa-bae0-4f49-b7b1-2a69ca82f9ce.png">
-
-
-
-
-
-
-
