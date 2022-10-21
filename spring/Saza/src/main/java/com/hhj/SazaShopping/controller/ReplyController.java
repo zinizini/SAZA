@@ -37,13 +37,7 @@ public class ReplyController {
 	public void enrollReplyPOST(ReplyDTO dto) {
 		rs.enrollReply(dto);
 	}
-	
-//	@RequestMapping("/enrollreply")
-//	public @ResponseBody int enrollReply(@ModelAttribute ReplyDTO reply) {
-//		 int replyList = rs.enrollReply(reply);
-//		 return replyList;
-//	}
-	
+
 	/* 댓글 체크 */
 	/* mid, gdscode 파라미터 */
 	/* 존재 : 1 / 존재x : 0 */

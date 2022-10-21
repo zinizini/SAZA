@@ -87,19 +87,6 @@
 	<select id="pUpdate" parameterType="String" resultType="memberdto">
 	    SELECT * FROM MEMBER WHERE MID=#{loginId}
 	</select>
-
-	
-	<!-- <select id="purchaseList" resultType="orderdto">
-	
-	SELECT A.ORDERID, A.ORDERDATE, A.ORDERSTATE, A.TRACKINGNUM, B.CARTQTY, B.GDSCODE
-	FROM MEMBER_ORDER A LEFT OUTER JOIN MEMBER_ORDERITEM B ON A.ORDERID = B.ORDERID
-	WHERE MID = #{loginId,jdbcType=VARCHAR}
-</select> -->
-
-
-<!-- <select id="purchaselist" resultType="orderdto">
-		SELECT * FROM MEMBER_ORDER WHERE MID = #{loginId,jdbcType=VARCHAR}
-	</select> -->
 	
 	<select id="orderview" parameterType="String" resultType="orderdto">
 		SELECT * FROM MEMBER_ORDER WHERE MID=#{mid}
@@ -117,13 +104,7 @@
 	<select id="orderlistView" parameterType="String"  resultType="orderitemdto">
 		SELECT * FROM MEMBER_ORDERITEM WHERE ORDERID = #{orderId}
 	</select>
-	
-	
-	
-	
-	
-	
-	
+
 	<select id="orderreply" resultType="replydto">
 		
 		SELECT * FROM REPLY 

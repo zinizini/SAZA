@@ -148,17 +148,14 @@ https://templatemo.com/tm-559-zay-shop
                         </a>
                         <!-- <button onclick="update()">프로필 정보</button><br> -->
                         <a class="text-decoration-none" href="javascript:update()">프로필 정보</a><br>
-                        <a class="text-decoration-none" href="#">주소록</a><br>
                         
                         <div class="pb-3">
                         <a class="collapsed d-flex justify-content-between h3 text-decoration-none" style="padding-top:10px">
                             쇼핑 정보 
                         </a>
                         
-                            <a class="text-decoration-none" href="#">구매 내역</a><br>
-                            <a class="text-decoration-none" href="#">판매 내역</a><br>
+                            <a class="text-decoration-none" href="orderview?mid=${member.mid}">구매 내역</a><br>
                             <a class="text-decoration-none" href="#">관심 상품</a><br>
-                            <a class="text-decoration-none" href="/chatpage">챗 </a><br>
                           
                    </div>
                    <c:if test="${sessionScope.loginMember eq 'admin'}">

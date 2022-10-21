@@ -124,7 +124,7 @@ ul{
 .admin_content_wrap{
     width: 80%;
     float:left;
-    min-height:700px;
+    min-height:200px;
 }
 .admin_content_subject{	/* 관리자 컨텐츠 제목 영역 */
     font-size: 40px;
@@ -354,18 +354,14 @@ button{
 					<a
 						class="collapsed d-flex justify-content-between h3 text-decoration-none">
 						내 정보 </a>
-					<!-- <button onclick="update()">프로필 정보</button><br> -->
 					<a class="text-decoration-none" href="javascript:update()">프로필
-						정보</a><br> <a class="text-decoration-none" href="#">주소록</a><br>
+						정보</a><br>
 
 					<div class="pb-3">
 						<a
 							class="collapsed d-flex justify-content-between h3 text-decoration-none"
 							style="padding-top: 10px"> 쇼핑 정보 </a> <a
-							class="text-decoration-none" href="#">구매 내역</a><br> <a
-							class="text-decoration-none" href="#">판매 내역</a><br> <a
-							class="text-decoration-none" href="#">관심 상품</a><br> <a
-							class="text-decoration-none" href="/chatpage">챗 </a><br>
+							class="text-decoration-none" href="#">구매 내역</a><br>
 
 					</div>
 					</c:if>
@@ -556,13 +552,7 @@ button{
     	$("#deleteForm").find("input[name='orderId']").val(id);
     	$("#deleteForm").submit();
     });
-    
- /* function boardDelete() {
-		
-			location.href='orderlist?page=${page}';
-			
-		
-	}  */
+
 	
 
 

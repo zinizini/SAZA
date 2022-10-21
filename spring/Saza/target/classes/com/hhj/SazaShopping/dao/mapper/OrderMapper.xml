@@ -59,17 +59,19 @@
 	<select id="getOrderItemInfo" resultType="orderitemdto">
 		SELECT * FROM MEMBER_ORDERITEM WHERE ORDERID = #{orderId}	
 	</select>
-	
+
 	<!-- 주문 정보(주문 취소) -->
 	<select id="getOrder" resultType="orderdto">
-		SELECT * FROM MEMBER_ORDER WHERE ORDERID = #{orderId}	
+		SELECT * FROM MEMBER_ORDER
+		WHERE ORDERID = #{orderId}
 	</select>
-	
+
 	<!-- 배송 상태 -->
-<update id="delivery" parameterType="orderdto">
-UPDATE MEMBER_ORDER SET ORDERSTATE = '배송완료', TRACKINGNUM=#{trackingNum} WHERE ORDERID =#{orderId}
- 
-</update>
+	<update id="delivery" parameterType="orderdto">
+		UPDATE MEMBER_ORDER SET ORDERSTATE = '배송완료', TRACKINGNUM=#{trackingNum}
+		WHERE ORDERID =#{orderId}
+
+	</update>
 	
 	
 	

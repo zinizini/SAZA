@@ -161,18 +161,11 @@ public class OrderService {
 		mav = new ModelAndView();
 		int updateResult = orderdao.delivery(ord);
 		if(updateResult > 0) {
-			//1. 목록 출력 
-			//2. 해당 글의 상세화면 출력 
+			
 			mav.setViewName("redirect:/orderlist");
 		}
 		return mav;
 	}
-
-	
-
-
-
-
 
 
 }

@@ -147,23 +147,6 @@ public class MemberService {
 	}
 
 
-//	public String idFind(String mphone) {
-//		mav = new ModelAndView();
-//		String idResult = mdao.idFind(mphone);
-//		String result = "";
-//		if(idResult != null) {
-//			result = "ok";
-//			mav.setViewName("idfindresult");
-//			
-//		} else {
-////			mav.addObject("msg","이메일 또는 비밀번호를 확인해주세요");
-//		
-//			result = "no";
-//			mav.setViewName("idfind");
-//			
-//		}
-//		return result;
-//	}
 
 
 	public String idfindAjax(String mphone) {
@@ -182,27 +165,6 @@ public class MemberService {
 	}
 
 
-	
-
-
-//	public ModelAndView idFind(MemberDTO member) {
-//		mav = new ModelAndView();
-//		String findId = mdao.idFind(member);
-//		
-//		
-//		List<MemberDTO> memberList = mdao.memberList();
-//		
-//		if (findId != null) {
-//			mav.addObject("memberList", memberList);
-//			mav.setViewName("idresult");
-//		} else {
-//			mav.setViewName("idfind");
-////			mav.addObject("msg","이메일 또는 비밀번호를 확인해주세요");
-//		}
-//		return mav;
-//	}
-
-
 	public ModelAndView memberList() {
 		mav = new ModelAndView();
 		List<MemberDTO> memberList = mdao.memberList();
@@ -214,19 +176,13 @@ public class MemberService {
 
 	public ModelAndView memberView(String mid) {
 		mav = new ModelAndView();
-		
-//		String loginId = (String) session.getAttribute("member");
-//		MemberDTO memberView = mdao.memberView(loginId);
-		
+
 		MemberDTO member = mdao.memberView(mid);
 		mav.addObject("member", member);
 		mav.setViewName("productview");
 		return mav;
 	}
 
-
-	
-	
 	public ModelAndView idFind(String mphone) {
 	mav = new ModelAndView();
 	String Findid = mdao.idFind(mphone);
@@ -260,18 +216,9 @@ public class MemberService {
 	}
 	public ModelAndView withdrawalPage() {
 		mav = new ModelAndView();
-		// 우변 : 현재 로그인을 한 상태에서 수정 요청을 하는 것이기 때문에 
-		// 		 세션에 저장된 로그인 아이디 값을 가지고 옴. 
-		//		 가져와서 loginId 변수에 저장 
+
 		String loginId = (String) session.getAttribute("loginMember");
-		// 강제형변환
-//		double a=0.0;
-//		int b=0;
-//		b=(int) a;
-		
-		// update() 메소드는 현재 로그인한 회원의 전체 정보를 DB로 부터 가져와서
-		// memberupdate.jsp에 출력하는 것이 목적이기 때문에 memberview 메소드를 사용해도 문제 없음. 
-//		MemberDTO memberUpdate = mdao.memberView(loginId);
+
 		MemberDTO memberUpdate = mdao.update(loginId);
 		
 		mav.addObject("member", memberUpdate);
@@ -322,7 +269,7 @@ public class MemberService {
 			String charSet = "utf-8";
 			String hostSMTP = "smtp.naver.com";
 			String hostSMTPid = "botnd3978@naver.com";
-			String hostSMTPpwd = "cjstk7769@";
+			String hostSMTPpwd = "메일 비밀번호 입력 해야함";
 
 			// 보내는 사람 EMail, 제목, 내용
 			String fromEmail = "botnd3978@naver.com";
@@ -461,51 +408,16 @@ public class MemberService {
 			return mav;
 		}
 		
-//		public ModelAndView orderView(String mid) {
-//			mav = new ModelAndView();
-//			
-//			// 한명 회원에 대한 정보만 필요하기 때문에 DTO 타입의 객체로 리턴을 받음. 
-//			List<OrderDTO> order = mdao.orderView(mid);
-//			
-//			List<OrderDTO> list = mdao.orderList(mid);
-//			
-//			List<OrderItemDTO> ords = new ArrayList<>();
-//			
-//
-//			
-//			// DB 조회 결과를 member에 받았고.. 
-//			// member를 담아서 memberview.jsp로 가야함. 
-//			mav.addObject("result", order);
-//			mav.setViewName("purchaselist");
-//			
-//			mav.addObject("list", list);
-//			mav.setViewName("purchaselist");
-//				
-//			
-//		
-//			
-//			
-//			return mav;
-//		}
-
-		
 		
 		
 		public ModelAndView orderView(String mid,OrderDTO ord) {
 			mav = new ModelAndView();
 			
-			// 한명 회원에 대한 정보만 필요하기 때문에 DTO 타입의 객체로 리턴을 받음. 
-//			List<OrderDTO> order = mdao.orderView(mid);
-			
 			List<OrderDTO> list = mdao.orderList(mid);
 			mav.addObject("list", list);
-			mav.setViewName("purchaselist");
-			
-			
 			
 			List<OrderItemDTO> ords = mdao.orderitemList(ord.getOrderId());
 			mav.addObject("orderitemlist", ords);
-			mav.setViewName("purchaselist");
 			
 			
 			List<ProductDTO> productlist = pdao.productList();
@@ -513,14 +425,6 @@ public class MemberService {
 			mav.setViewName("purchaselist");
 			
 
-			
-			// DB 조회 결과를 member에 받았고.. 
-			// member를 담아서 memberview.jsp로 가야함. 
-//			mav.addObject("result", order);
-//			mav.setViewName("purchaselist");
-			
-
-			
 			return mav;
 		}
 
@@ -553,10 +457,6 @@ public class MemberService {
 			
 			return mav;
 		}
-		
-		
-		
-	
-	
+
 
 }

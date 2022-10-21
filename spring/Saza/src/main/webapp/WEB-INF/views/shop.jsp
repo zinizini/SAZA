@@ -103,7 +103,7 @@ https://templatemo.com/tm-559-zay-shop
                     </c:if>
                   
                     <c:if test="${!empty sessionScope.loginMember}">
-						<a class="nav-icon position-relative text-decoration-none" href="javascript:update()">
+						<a class="nav-icon position-relative text-decoration-none" href="javascript:myupdate()">
 						<i class="fa fa-fw fa-user text-dark mr-3"></i>
 						<span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
 						</a>
@@ -375,6 +375,10 @@ https://templatemo.com/tm-559-zay-shop
       
       function update(){
       	location.href = "memberupdate";
+      }
+      
+      function myupdate(){
+      	location.href = "myupdate";
       }
       
       

@@ -47,13 +47,13 @@ public class ProductController {
 	public String shopPage() {
 		return "shop";
 	}
-	
+	/* 상품 목록 */
 	@RequestMapping(value="/productlist")
 	public ModelAndView productList() {
 		mav = ps.productList();
 		return mav;
 	}
-	
+	/* 상품 상세보기 */
 	@RequestMapping(value="/productview")
 	public ModelAndView productView(@RequestParam("gdscode") int gdscode,
 			@RequestParam(value="page", required=false, defaultValue="1") int page, Model model) throws JsonProcessingException {
@@ -68,7 +68,7 @@ public class ProductController {
 		mav = ps.productView(gdscode,page);
 		return mav;
 	}
-	
+	/* 상품 검색 */
 	@RequestMapping(value="/search")
 	public ModelAndView productSearch(@RequestParam("searchtype") String searchType, 
 			@RequestParam("keyword") String keyword) {

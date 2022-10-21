@@ -354,7 +354,7 @@ th {
 		<div class="content_area">
 		
 		
-    <div class="content_subject"><span>관심 상품</span></div>
+    <div class="content_subject"><span>장바구니</span></div>
     
 				<!-- 장바구니 리스트 -->
 				<div class="content_middle_section"></div>
@@ -391,11 +391,11 @@ th {
 								<tr>
 									<td class="td_width_1 cart_info_td">
 									<input type="checkbox" class="individual_cart_checkbox input_size_20" checked="checked"> 
-									<input type="hidden" class="individual_bookPrice_input" value="${ci.gdsprice}">
+									<input type="hidden" class="individual_gdsPrice_input" value="${ci.gdsprice}">
 									<input type="hidden" class="individual_salePrice_input" value="${ci.salePrice}"> 
-									<input type="hidden" class="individual_bookCount_input" value="${ci.cartqty}">
+									<input type="hidden" class="individual_gdsCount_input" value="${ci.cartqty}">
 									<input type="hidden" class="individual_totalPrice_input" value="${ci.gdsprice * ci.cartqty}"> 
-									<input type="hidden" class="individual_bookId_input" value="${ci.gdscode}"></td>
+									<input type="hidden" class="individual_gdsId_input" value="${ci.gdscode}"></td>
 
 									<td class="td_width_2">
 										<div class="image_wrap"
@@ -597,7 +597,7 @@ th {
     		// 총 가격
     		totalPrice += parseInt($(element).find(".individual_totalPrice_input").val());
     		// 총 갯수
-    		totalCount += parseInt($(element).find(".individual_bookCount_input").val());
+    		totalCount += parseInt($(element).find(".individual_gdsCount_input").val());
     		// 총 종류
     		totalKind += 1;
     		}
@@ -673,8 +673,8 @@ th {
     		
     		if($(element).find(".individual_cart_checkbox").is(":checked") === true){	//체크여부
     			
-    			let gdscode = $(element).find(".individual_bookId_input").val();
-    			let cartqty = $(element).find(".individual_bookCount_input").val();
+    			let gdscode = $(element).find(".individual_gdsId_input").val();
+    			let cartqty = $(element).find(".individual_gdsCount_input").val();
     			
     			let gdscode_input = "<input name='orders[" + orderNumber + "].gdscode' type='hidden' value='" + gdscode + "'>";
     			form_contents += gdscode_input;

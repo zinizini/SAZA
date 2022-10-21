@@ -27,16 +27,14 @@ public class CartController {
 	
 	@Autowired
 	private CartService cartservice;
-	
-	@Autowired
-	private CartServiceImpl cartserviceimpl;
-	
+
 	
 	@Autowired
 	private HttpSession session;
 	
 	private ModelAndView mav;
 	
+	/* 장바구니 추가 */
 	@PostMapping(value="/cart/add")
 	public @ResponseBody String addCart(CartDTO cart, HttpServletRequest request) {
 		session = request.getSession();
@@ -53,13 +51,14 @@ public class CartController {
 		return result + "";
 	}
 
-	
+	/* 장바구니 정보 리스트 */
 	@RequestMapping(value="/cartview")
 	public ModelAndView cartView() {
 		mav= cartservice.cartView();
 		return mav;
 	}
 	
+	/* 장바구니 수량 수정 */
 	@PostMapping(value="/modifycount")
 	public String modifyCount(CartDTO cart) {
 		
@@ -69,7 +68,7 @@ public class CartController {
 	}
 	
 	
-	/* 장바구니 수량 수정 */
+	/* 장바구니 삭제 */
 	@PostMapping(value="/deletecart")
 	public String deleteCart(CartDTO cart) {
 		cartservice.deleteCart(cart.getCartid());

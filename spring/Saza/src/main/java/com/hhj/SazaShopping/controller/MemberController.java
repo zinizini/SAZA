@@ -60,6 +60,7 @@ public class MemberController {
 		return "my";
 	}
 	
+	/* 로그인 */
 	@RequestMapping(value="/login.do")
 	public ModelAndView memberLogin(@ModelAttribute MemberDTO member, HttpServletRequest request) {
 		System.out.println("login 메소드"+member.toString());
@@ -67,7 +68,7 @@ public class MemberController {
 		mav = ms.memberLogin(member);
 		return mav;
 	}
-	
+	/* 회원가입 */
 	@RequestMapping(value="/memberjoin")
 	public ModelAndView memberJoin(@ModelAttribute MemberDTO member) {
 		mav = ms.memberJoin(member);
@@ -78,7 +79,7 @@ public class MemberController {
 	public String joinPage() {
 		return "memberjoin";
 	}
-	
+	/* 아이디 중복 확인 */
 	@RequestMapping(value="idcheck")
 	public @ResponseBody String idCheck(@RequestParam("mid") String mid) {
 		System.out.println("idcheck 메소드 호출됨");
@@ -86,7 +87,7 @@ public class MemberController {
 		String result = ms.idCheck(mid);
 		return result;
 	}
-	
+	/* 로그아웃 */
 	@RequestMapping(value="logout")
 	public String logout() {
 		session.invalidate();
@@ -103,14 +104,14 @@ public class MemberController {
 		mav = ms.update();
 		return mav;
 	}
-	
+	/* 회원정보 수정 */
 	@RequestMapping(value="/profileupdate")
 	public ModelAndView profileUpdate(@ModelAttribute MemberDTO member)throws IllegalStateException, IOException {
 		mav = ms.profileUpdate(member);
 		return mav;
 	}
 	
-	
+	/* 이메일 확인 */
 	@RequestMapping(value="emailcheck")
 	public @ResponseBody String emailCheck(@RequestParam("memail") String memail) {
 		System.out.println("emailCheck 메소드 호출됨");
@@ -118,10 +119,7 @@ public class MemberController {
 		String result = ms.emailCheck(memail);
 		return result;
 	}
-	@RequestMapping(value="/chatpage")
-	public String chatPage() {
-		return "echo";
-	}
+	
 	@RequestMapping(value="/idfindpage")
 	public String idfindPage() {
 		return "findIdView";
@@ -134,13 +132,14 @@ public class MemberController {
 		return mav;
 	}
 	
+	/* 회원탈퇴 */
 	@RequestMapping(value="/withdrawal")
 	public ModelAndView withDrawal(@ModelAttribute MemberDTO member) {
 		mav = ms.withDrawal(member);
 		return mav;
 	}
 	
-	
+	/* 로그아웃 */
 	@RequestMapping(value="/withdraw")
 	public ModelAndView withDraw(@RequestParam("mid") String mid) {
 		mav = ms.withDraw(mid);
@@ -184,13 +183,13 @@ public class MemberController {
 		return "/pwfind";
 	}
 
-	// 비밀번호 찾기
+	/* 비밀번호 찾기 */
 	@RequestMapping(value = "/findPw")
 	public void findPw(@ModelAttribute MemberDTO member, HttpServletResponse response) throws Exception {
 		ms.findPw(response, member);
 	}
 	
-	// 비밀번호 변경
+	/* 비밀번호 변경 */
 	@RequestMapping(value = "/pwUpdate")
 	public String update_pw(@ModelAttribute MemberDTO member, @RequestParam("old_pw") String old_pw,
 			HttpSession session, HttpServletResponse response, RedirectAttributes rttr) throws Exception {
@@ -212,17 +211,9 @@ public class MemberController {
 		return mav;
 	}
 	
-	
-//	@RequestMapping(value="/orderview")
-//	public ModelAndView orderView(@RequestParam("mid") String mid){
-//		mav = ms.orderView(mid);
-//		return mav;
-//	}
-	
-	
+	/* 주문내역 */
 	@RequestMapping(value="/orderview")
 	public ModelAndView orderView(@RequestParam("mid") String mid,OrderDTO od, HttpServletRequest request){
-		
 	
 		mav = ms.orderView(mid,od);
 		return mav;
@@ -230,24 +221,11 @@ public class MemberController {
 	
 	@RequestMapping(value="/orderlistView")
 	public ModelAndView orderlistView(@RequestParam("orderId") String orderId, Model model) throws JsonProcessingException {
-		
-		
 
-		
-		
-		
-		
-		
-		
 		mav = ms.orderlistView(orderId);
 		return mav;
 	}
-	
-	
-	
-	
 
-	
 	
 	
 }

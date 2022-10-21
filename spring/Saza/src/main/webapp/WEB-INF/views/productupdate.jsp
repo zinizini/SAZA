@@ -298,7 +298,7 @@ https://templatemo.com/tm-559-zay-shop
 			<div class="col-lg-9">
 				<!-- 내용 가운데로  -->
 
-				<h2 style="margin-left: 20px;">상품 등록</h2>
+				<h2 style="margin-left: 20px;">상품 수정</h2>
 				
 			<!-- 	<div class="container-fluid"> -->
 				<div class="row" style="margin-left: 10px;">

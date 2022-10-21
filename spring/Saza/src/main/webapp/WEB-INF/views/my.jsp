@@ -144,9 +144,7 @@ https://templatemo.com/tm-559-zay-shop
                         <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="mypage">
                         내 정보 
                         </a>
-                        <!-- <button onclick="update()">프로필 정보</button><br> -->
                         <a class="text-decoration-none" href="javascript:update()">프로필 정보</a><br>
-                        <a class="text-decoration-none" href="#">주소록</a><br>
                         
                         <div class="pb-3">
                         <a class="collapsed d-flex justify-content-between h3 text-decoration-none" style="padding-top:10px">
@@ -154,14 +152,11 @@ https://templatemo.com/tm-559-zay-shop
                         </a>
                         
                             <a class="text-decoration-none" href="orderview?mid=${member.mid}">구매 내역</a><br>
-                            <a class="text-decoration-none" href="#">판매 내역</a><br>
                             <a class="text-decoration-none" href="cartpage">관심 상품</a><br>
                             
                           
                    </div>
                    </c:if>
-                   <a class="text-decoration-none" href="/chat">챗 </a><br>
-                   <a class="text-decoration-none" href="/chatt">챗2 </a><br>
                    <c:if test="${sessionScope.loginMember eq 'admin'}">
                    <a class="collapsed d-flex justify-content-between h3 text-decoration-none" style="padding-top:10px">
                             관리자 페이지 </a>
@@ -232,7 +227,9 @@ https://templatemo.com/tm-559-zay-shop
     function logout(){
     	location.href = "logout";
     }
-   
+    function update(){
+      	location.href = "memberupdate";
+      }
     
     </script>
     <!-- End Script -->

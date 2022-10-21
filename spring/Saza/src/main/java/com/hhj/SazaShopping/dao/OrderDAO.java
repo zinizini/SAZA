@@ -64,7 +64,7 @@ public class OrderDAO {
 	public OrderDTO getOrder(String orderId) {
 		return sql.selectOne("om.getOrder", orderId);
 	}
-	
+	/* 주문 송장 */
 	public int delivery(OrderDTO ord)throws Exception{
 		return sql.update("om.delivery", ord);
 	}

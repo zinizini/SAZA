@@ -88,8 +88,7 @@ public class MemberDAO {
 	public int pwUpdate(MemberDTO member) {
 		return sql.update("mm.pwUpdate", member);
 	}
-	
-	
+
 	// 로그인 검사
 	public MemberDTO pUpdate(String loginId) {
 		return sql.selectOne("mm.pUpdate",loginId);
@@ -115,13 +114,6 @@ public class MemberDAO {
 		return sql.selectList("mm.orderreply");
 	}
 
-	
-	
 
-
-
-
-
-	
 
 }

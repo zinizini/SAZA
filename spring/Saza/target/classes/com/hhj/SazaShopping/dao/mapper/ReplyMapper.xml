@@ -50,11 +50,7 @@
   		WHERE replyId = #{replyId}
   		
   	</delete>
-  	
-  	
-  	
-  	
-  	
+
   	<!-- 댓글 페이징 -->
   	<select id="getReplyList" parameterType="pagedto" resultType="replydto">
   		

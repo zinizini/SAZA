@@ -32,7 +32,7 @@
 	<select id="checkcart" resultType="cartdto">
 		SELECT * FROM CART WHERE MID = #{mid} AND GDSCODE = #{gdscode}
 	</select> 
-	
+	<!-- 카트 상세보기 -->
 	<select id="cartview" parameterType="String" resultType="cartdto">
 		SELECT * FROM CART WHERE MID=#{mid}
 	</select>

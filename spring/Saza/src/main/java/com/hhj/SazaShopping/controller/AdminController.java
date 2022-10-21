@@ -36,7 +36,7 @@ public class AdminController {
 
 	
 	
-	// 상품등록 화면을 띄우는 메소드 
+	/* 상품등록 화면을 띄우는 메소드 */
 	@RequestMapping(value="/register")
 	public void registerPage(Model model) throws Exception  {
 		
@@ -44,14 +44,13 @@ public class AdminController {
 		
 		List<CategoryDTO> list = as.cateList();	
 		String cateList = objm.writeValueAsString(list);
-		//  뷰(view)로 데이터를 넘겨주기 위해서 url 매핑 메서드의 파라미터에 Model를 부여해준 후 
-		// addAttribute()를 사용하여 "cateList"속성에 String타입의 'cateList' 변수의 값을 저장시킵니다.
+		
 		model.addAttribute("cateList", cateList);
 		
 		
 	}
 	
-	// 상품등록 
+	/* 상품등록 */
 	@RequestMapping(value="/presister")
 	public ModelAndView pResister(@ModelAttribute ProductDTO product) throws IllegalStateException, IOException{
 		mav = as.pResister(product);
@@ -63,14 +62,14 @@ public class AdminController {
 		return "memberlist";
 	}
 	
-	// 상품삭제 
+	/* 상품삭제 */
 	@RequestMapping(value="/productdelete")
 	public ModelAndView boardDelete(@RequestParam("gdscode") int gdscode) {
 		mav = as.productDelete(gdscode);
 		return mav;
 	}
 	
-	// 수정화면 요청 
+	/* 수정화면 요청 */
 		@RequestMapping(value="/productupdate")
 		public ModelAndView productUpdate(@RequestParam("gdscode") int gdscode , Model model) throws JsonProcessingException   {
 			
@@ -85,7 +84,7 @@ public class AdminController {
 	
 		
 	
-	// 수정처리
+	/* 수정처리 */
 	@RequestMapping(value="/updateprocess")
 	public ModelAndView updateProcess(@ModelAttribute ProductDTO product) {
 		mav = as.updateProcess(product);
@@ -105,30 +104,7 @@ public class AdminController {
 		return mav;
 	}
 	
-//	/* 주문 현황 페이지 */
-//	@GetMapping("/orderList")
-//	public String orderList(Model model) {
-//		
-//		List<OrderDTO> list = as.getOrderList();
-//		
-//		if(!list.isEmpty()) {
-//			model.addAttribute("list", list);
-//		} else {
-//			model.addAttribute("listCheck", "empty");
-//		}
-//		return "/orderlist";
-//	}
-	
-	/* 주문 현황 페이지 */
-//	@GetMapping("/orderList")
-//	public String orderList(Model model) {
-//		
-//		List<OrderDTO> list = as.getOrderList();
-//		model.addAttribute("list", list);
-//	
-//		return "/orderlist";
-//	}
-	
+	/* 검색 처리 */
 	@RequestMapping(value="/msearch")
 	public ModelAndView memberSearch(@RequestParam("searchtype") String searchType, 
 			@RequestParam("keyword") String keyword) {
